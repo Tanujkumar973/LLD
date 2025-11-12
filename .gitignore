@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/LLD_Solutions/SnakeAndLadder/bin/Debug
+/LLD_Solutions/SnakeAndLadder/obj
+/LLD_Solutions/TicTacToe/bin/Debug
+/LLD_Solutions/TicTacToe/obj
+/LLD_Solutions/LRUCache/LRUCache/bin/Debug
+/LLD_Solutions/LRUCache/LRUCache/obj/Debug
