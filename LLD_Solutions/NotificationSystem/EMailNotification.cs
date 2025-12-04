@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace NotificationSystem
@@ -10,8 +11,8 @@ namespace NotificationSystem
     {
         public bool SendNotification(Notification notification)
         {
-            Console.WriteLine($"notification sent through email Message body{notification.MessageBody}");
-            return true;
+            Console.WriteLine($"notification sent through email Message body{notification.MessageBody} at {DateTime.Now.ToString()}");
+        return true;
         }
     }
 }

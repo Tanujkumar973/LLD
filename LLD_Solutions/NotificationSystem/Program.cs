@@ -8,12 +8,15 @@ namespace NotificationSystem
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             NotificationManager manager = new NotificationManager();
-            manager.SendNotification(new Notification("Order placed", "Your order placed successfully"), NotificationChannel.Push);
-            manager.SendNotification(new Notification("Order shipped", "Your order shipped successfully"), NotificationChannel.SMS);
-            manager.SendNotification(new Notification("Order cancelled", "Your order cancelled successfully"), NotificationChannel.Email);
+
+                Task task1 = Task.Run(() => { manager.SendNotification(new Notification("Order placed", "Your order placed successfully"), NotificationChannel.Push); });
+                Task task2 = Task.Run(() => { manager.SendNotification(new Notification("Order shipped", "Your order shipped successfully"), NotificationChannel.SMS); });
+                Task task3 = Task.Run(() => { manager.SendNotification(new Notification("Order cancelled", "Your order cancelled successfully"), NotificationChannel.Email); });
+                await Task.WhenAll(task1, task2, task3);
+        
         }
     }
 }
